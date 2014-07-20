@@ -22,11 +22,11 @@
     </script>
     <script>
 	dataurl="data/Violations-2012.csv";
-	dataset="";
+	input="";
     $.get( dataurl, function( data ) {
-	  dataset=data;
+	  input=data;
 	});
-	$.csv.toObjects(dataset)
+	dataset=$.csv.toObjects(input)
 	$( "#result" ).html( dataset );
     </script>
   </body>
