@@ -16,18 +16,20 @@
     
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
-    <script src="jquery.csv-0.71.min.js"></script>
+    <script src="papaparse.min.js"></script>
     <script>
       $(document).foundation();
     </script>
     <script>
-	dataurl="data/Violations-2012.csv";
-	input="";
-    $.get( dataurl, function( data ) {
-	  input=data;
+	$(function(){
+		url="data/Violation-2012.csv";
+		Papa.parse(url, {
+			complete:function(results){
+				$("#result").html(results.data);
+			}
+		});
 	});
-	dataset=$.csv.toObjects(input)
-	$( "#result" ).html( dataset );
+	
     </script>
   </body>
 </html>
