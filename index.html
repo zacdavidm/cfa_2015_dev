@@ -16,14 +16,18 @@
     
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
+    <script src="jquery.csv-0.71.min.js"></script>
     <script>
       $(document).foundation();
     </script>
     <script>
 	dataurl="data/Violations-2012.csv";
+	dataset="";
     $.get( dataurl, function( data ) {
-	  $( "#result" ).html( data );
+	  dataset=data;
 	});
+	$.csv.toObjects(dataset)
+	$( "#result" ).html( dataset );
     </script>
   </body>
 </html>
