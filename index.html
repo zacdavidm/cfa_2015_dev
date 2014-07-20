@@ -22,8 +22,11 @@
     </script>
     <script>
 	$(function(){
-		url="data/Violation-2012.csv";
-		data=Papa.parse(url);
+		datastring="";
+		$.get( "data/Violation-2012.csv", function( data ) {
+		  datastring=data;
+		});
+		data=Papa.parse(datastring);
 		$("#results").html(data);
 	});
 	
