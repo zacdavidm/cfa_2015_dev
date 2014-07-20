@@ -23,11 +23,8 @@
     <script>
 	$(function(){
 		url="data/Violation-2012.csv";
-		Papa.parse(url, {
-			complete:function(results){
-				$("#result").html(results.data);
-			}
-		});
+		data=Papa.parse(url);
+		$("#results").html(data);
 	});
 	
     </script>
